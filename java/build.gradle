@@ -1,9 +1,28 @@
-plugins {
-    id 'java-library'
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.3'
+    }
 }
 
+plugins {
+    id 'java'
+}
+apply plugin: 'org.junit.platform.gradle.plugin'
+
+import org.junit.platform.console.options.Details
+
+junitPlatform {
+    details Details.TREE
+}
+
+ext.junitJupiterVersion = '5.0.3'
+
 dependencies {
-    testImplementation 'junit:junit:4.12'
+    testCompile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
+    testRuntime("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
 }
 
 repositories {

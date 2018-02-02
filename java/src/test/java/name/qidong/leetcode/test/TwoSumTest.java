@@ -1,17 +1,16 @@
 package name.qidong.leetcode.test;
 
 import name.qidong.leetcode.TwoSum;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.fail;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
-
-public class TwoSumTest {
+class TwoSumTest {
     private TwoSum solution = new TwoSum();
 
     @Test
-    public void testTwoSum() {
+    void twoSum() {
         int[] nums = new int[]{3, 2, 3};
         int target = 6;
         int[] expect = new int[]{0, 2};
@@ -21,13 +20,13 @@ public class TwoSumTest {
     }
 
     @Test
-    public void testTwoSumWithError() {
+    void twoSumError() {
         int[] nums = new int[]{3, 2, 3};
         int target = 7;
 
         try {
             solution.twoSum(nums, target);
-            fail();
+            fail("IllegalArgumentException expected!");
         } catch (IllegalArgumentException e) {
             // pass
         }
