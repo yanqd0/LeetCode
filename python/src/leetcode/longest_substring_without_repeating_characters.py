@@ -25,20 +25,15 @@ class Solution:
         :type s: str
         :rtype: int
         """
-        longest = current = 0
-        deleted_index = -1
-        char2index = {}
+        longest = 0
+        last = -1
+        char2index = [-1] * 128
         for index, ch in enumerate(s):
-            previous = char2index.get(ch, -1)
-            if previous < 0:
-                current += 1
-            else:
-                if longest < current:
-                    longest = current
-                current = index - previous
-
-                for pos in range(deleted_index, previous):
-                    char2index[s[pos + 1]] = -1
-                deleted_index = previous
-            char2index[ch] = index
-        return longest if longest > current else current
+            previous = char2index[ord(ch)]
+            if previous >= 0:
+                longest = max(longest, index - last - 1)
+                for pos in range(last, previous):
+                    char2index[ord(s[pos + 1])] = -1
+                last = previous
+            char2index[ord(ch)] = index
+        return max(longest, len(s) - last - 1)
