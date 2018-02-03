@@ -14,7 +14,8 @@ SOLUTION = Solution()
     ('', 0),
     ('au', 2),
     ('aab', 2),
-    ('abba', 2)
+    ('abba', 2),
+    ('ggububgvfk', 6),
 ])
 def test_length_of_longest_substring(test_str, expect):
     assert expect == SOLUTION.lengthOfLongestSubstring(test_str)

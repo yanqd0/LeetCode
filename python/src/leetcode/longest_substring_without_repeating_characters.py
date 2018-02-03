@@ -26,35 +26,19 @@ class Solution:
         :rtype: int
         """
         longest = current = 0
-        char2index = SectionCharacterMap()
+        deleted_index = -1
+        char2index = {}
         for index, ch in enumerate(s):
-            previous = char2index[ch]
+            previous = char2index.get(ch, -1)
             if previous < 0:
                 current += 1
             else:
                 if longest < current:
                     longest = current
-                char2index.delete_before(previous)
                 current = index - previous
+
+                for pos in range(deleted_index, previous):
+                    char2index[s[pos + 1]] = -1
+                deleted_index = previous
             char2index[ch] = index
         return longest if longest > current else current
-
-
-class SectionCharacterMap(object):
-    def __init__(self):
-        self.__map = [-1] * 256
-        self.__list = []
-        self.__delete_index = -1
-
-    def __setitem__(self, key, value):
-        self.__map[ord(key)] = value
-        self.__list.append(key)
-
-    def __getitem__(self, item):
-        return self.__map[ord(item)]
-
-    def delete_before(self, index):
-        for pos in range(self.__delete_index, index):
-            key = self.__list[pos + 1]
-            self.__map[ord(key)] = -1
-        self.__delete_index = index
