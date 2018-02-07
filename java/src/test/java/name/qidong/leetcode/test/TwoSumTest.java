@@ -1,9 +1,10 @@
 package name.qidong.leetcode.test;
 
-import name.qidong.leetcode.*;
-import org.junit.jupiter.api.*;
+import name.qidong.leetcode.TwoSum;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 class TwoSumTest {
     private TwoSum solution = new TwoSum();
