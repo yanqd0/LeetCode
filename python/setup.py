@@ -30,12 +30,11 @@ setup(
     python_requires='>=3.6',
     install_requires=[],
     setup_requires=[
-        'pytest-runner',
+        'pytest-runner >= 3.0',
     ],
     tests_require=[
-        'pytest',
-        'pytest-cov',
-        'mock',
+        'pytest >= 3.4.0',
+        'pytest-cov >= 2.5.1',
     ],
 
     keywords=['leetcode'],
