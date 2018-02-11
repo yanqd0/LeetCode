@@ -27,26 +27,16 @@ class Solution:
         :type numRows: int
         :rtype: str
         """
-        if numRows <= 1:
+        if numRows <= 1 or len(s) <= numRows:
             return s
 
-        matrix = []
-        for row in range(numRows):
-            matrix.append([])
-        row = 0
-        step = 1
-
-        for char in s:
-            matrix[row].append(char)
-
+        result = [''] * numRows
+        row, step = 0, 1
+        for index, char in enumerate(s):
+            result[row] += char
             if row == 0:
                 step = 1
-            elif row + 1 == numRows:
+            elif row == numRows - 1:
                 step = -1
-
             row += step
-
-        from functools import reduce
-
-        result = reduce(lambda x, y: x + y, matrix, [])
         return ''.join(result)

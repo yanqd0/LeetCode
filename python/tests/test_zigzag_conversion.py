@@ -12,8 +12,10 @@ PARAMS = [
     ('PAYPALISHIRING', 1, 'PAYPALISHIRING'),
     ('PAYPALISHIRING', 2, 'PYAIHRNAPLSIIG'),
     ('PAYPALISHIRING', 3, 'PAHNAPLSIIGYIR'),
-    ('PAYPALISHIRING', 4, 'PINALSIGYAHRPI'),
-    ('PAYPALISHIRING', 5, 'PHASIYIRPLIGAN'),
+    ('abcdefghijklmn', 4, 'agmbfhlnceikdj'),
+    ('abcdefghijklmn', 5, 'aibhjcgkdflnem'),
+    ('abcdefghijklmno', 5, 'aibhjcgkodflnem'),
+    ('abcdefghijklmnop', 5, 'aibhjpcgkodflnem'),
 ]
 
 
