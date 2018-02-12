@@ -35,12 +35,9 @@ class Solution:
         :type x: int
         :rtype: int
         """
-        if x > MAX_INT or x < MIN_INT or x == 0:
+        if x > MAX_INT or x < MIN_INT:
             return 0
 
         s, sign = (str(x), 1) if x > 0 else (str(-x), -1)
-        rev_list = list(reversed(s))
-        rev_str = ''.join(rev_list)
-        rev = sign * int(rev_str)
-
+        rev = sign * int(s[::-1])
         return 0 if rev > MAX_INT or rev < MIN_INT else rev
