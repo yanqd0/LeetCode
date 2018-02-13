@@ -41,7 +41,6 @@ class Solution:
         step = len(arr1) // 2 if len(arr1) < len(arr2) else len(arr2) // 2
         while True:
             if len(arr1) == 1:
-                print('hello')
                 return arr2.calc_median(arr1.median)
             elif len(arr2) == 1:
                 return arr1.calc_median(arr2.median)
