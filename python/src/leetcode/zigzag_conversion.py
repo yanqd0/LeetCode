@@ -32,7 +32,7 @@ class Solution:
 
         result = [''] * numRows
         row, step = 0, 1
-        for index, char in enumerate(s):
+        for char in s:
             result[row] += char
             if row == 0:
                 step = 1

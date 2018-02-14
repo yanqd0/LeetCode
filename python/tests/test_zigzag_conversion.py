@@ -8,6 +8,7 @@ PARAMS = [
     ('', 1, ''),
     ('ABC', 0, 'ABC'),
     ('ABC', 1, 'ABC'),
+    ('abc', 5, 'abc'),
     ('PAYPALISHIRING', 0, 'PAYPALISHIRING'),
     ('PAYPALISHIRING', 1, 'PAYPALISHIRING'),
     ('PAYPALISHIRING', 2, 'PYAIHRNAPLSIIG'),
