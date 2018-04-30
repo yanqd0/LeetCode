@@ -5,7 +5,7 @@ import name.qidong.leetcode.test.util.String2int;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.converter.ConvertWith;
-import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.CsvFileSource;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.fail;
@@ -14,10 +14,7 @@ class TwoSumTest {
     private TwoSum solution = new TwoSum();
 
     @ParameterizedTest
-    @CsvSource({
-            "'[1, 1]', 2, '[0, 1]'",
-            "'[3, 2, 3]', 6, '[0, 2]'",
-    })
+    @CsvFileSource(resources = "/two_sum.csv", numLinesToSkip = 1)
     void twoSum(
             @ConvertWith(String2int.class) int[] nums,
             int target,
