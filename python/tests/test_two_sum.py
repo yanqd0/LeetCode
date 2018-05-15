@@ -1,17 +1,14 @@
-from leetcode.two_sum import Solution
 from pytest import mark, raises
 
-SOLUTION = Solution()
+from leetcode.two_sum import Solution
+from tests import read_csv
 
 
-@mark.parametrize('nums, target, expected', [
-    ([3, 2, 4], 6, [1, 2]),
-    ([3, 2, 3], 6, [0, 2]),
-])
-def test_two_sum(nums, target, expected):
-    assert expected == SOLUTION.twoSum(nums, target)
+@mark.parametrize('nums, target, expect', read_csv(__file__))
+def test_two_sum(nums, target, expect):
+    assert expect == Solution().twoSum(nums, target)
 
 
 def test_two_sum_with_err():
     with raises(RuntimeError):
-        SOLUTION.twoSum(nums=[1, 2], target=4)
+        Solution().twoSum(nums=[1, 2], target=4)
