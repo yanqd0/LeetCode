@@ -3,7 +3,7 @@ import re
 from os.path import abspath, basename, dirname, join
 
 
-def read_csv(path, parser=eval):
+def read_csv(path, parser=None):
     path = abspath(path)
     name = basename(path)
     name = re.sub('^test_', '', name)
@@ -17,6 +17,6 @@ def read_csv(path, parser=eval):
         for line in reader:
             if reader.line_num == 1:
                 continue
-            new_line = [parser(item) for item in line]
+            new_line = [(parser(item) if parser else item) for item in line]
             result.append(new_line)
         return result
