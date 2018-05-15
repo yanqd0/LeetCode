@@ -1,5 +1,6 @@
-package name.qidong.leetcode;
+package name.qidong.leetcode.test;
 
+import name.qidong.leetcode.ReverseInteger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
