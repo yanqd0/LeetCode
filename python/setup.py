@@ -39,6 +39,7 @@ setup(
     tests_require=[
         'pytest >= 3.4.0',
         'pytest-cov >= 2.5.1',
+        'pytest-mock >= 1.10.0',
     ],
 
     keywords=['leetcode'],
