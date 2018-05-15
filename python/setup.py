@@ -17,7 +17,10 @@ setup(
     author=INFO['__author__'],
     author_email=INFO['__email__'],
     license=INFO['__license__'],
-    version=INFO['__version__'],
+    use_scm_version={
+        "root": "..",
+        "relative_to": __file__,
+    },
 
     packages=find_packages('src'),
     package_dir={'': 'src'},
@@ -31,6 +34,7 @@ setup(
     install_requires=[],
     setup_requires=[
         'pytest-runner >= 3.0',
+        'setuptools_scm >= 2.0.0',
     ],
     tests_require=[
         'pytest >= 3.4.0',
