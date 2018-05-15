@@ -1,7 +1,7 @@
 from pytest import mark
 
 from leetcode.longest_substring_without_repeating_characters import Solution
-from tests import read_csv
+from . import read_csv
 
 
 @mark.parametrize('test_str, expect', read_csv(__file__, parser=str))
