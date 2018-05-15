@@ -8,10 +8,9 @@ SOLUTION = Solution()
 
 def _parser(item):
     sep = '->'
-    if sep in item and isinstance(item, str):
-        splits = item.split(sep)
+    if sep in item:
         root = last = None
-        for value in splits:
+        for value in item.split(sep):
             node = ListNode(int(value))
             if last:
                 last.next = node
