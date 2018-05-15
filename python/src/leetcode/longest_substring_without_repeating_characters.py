@@ -13,12 +13,12 @@ Given "bbbbb", the answer is "b", with the length of 1.
 Given "pwwkew", the answer is "wke", with the length of 3.
 Note that the answer must be a substring,
 "pwke" is a subsequence and not a substring.
+
+https://leetcode.com/problems/longest-substring-without-repeating-characters/
 """
 
 
 # noinspection PyPep8Naming,PyMethodMayBeStatic
-
-
 class Solution:
     def lengthOfLongestSubstring(self, s):
         """
@@ -28,6 +28,7 @@ class Solution:
         longest = 0
         last = -1
         char2index = [-1] * 128
+        print(s)
         for index, ch in enumerate(s):
             previous = char2index[ord(ch)]
             if previous >= 0:
