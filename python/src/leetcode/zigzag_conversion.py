@@ -16,6 +16,8 @@ of rows:
 string convert(string text, int nRows);
 
 convert("PAYPALISHIRING", 3) should return "PAHNAPLSIIGYIR".
+
+https://leetcode.com/problems/zigzag-conversion/
 """
 
 
