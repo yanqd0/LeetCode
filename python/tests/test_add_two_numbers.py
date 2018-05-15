@@ -1,40 +1,32 @@
+from pytest import mark
+
 from leetcode.add_two_numbers import ListNode, Solution
+from . import read_csv
 
 SOLUTION = Solution()
 
 
-def test_add_two_numbers0():
-    l1 = ListNode(2)
-    l1.next = ListNode(4)
-    l1.next.next = ListNode(3)
-    l2 = ListNode(5)
-    l2.next = ListNode(6)
-    l2.next.next = ListNode(4)
-
-    result = SOLUTION.addTwoNumbers(l1, l2)
-    assert 7 == result.val
-    assert 0 == result.next.val
-    assert 8 == result.next.next.val
-
-
-def test_add_two_numbers1():
-    l1 = ListNode(5)
-    l2 = ListNode(5)
-
-    result = SOLUTION.addTwoNumbers(l1, l2)
-    assert 0 == result.val
-    assert 1 == result.next.val
+def _parser(item):
+    sep = '->'
+    if sep in item and isinstance(item, str):
+        splits = item.split(sep)
+        root = last = None
+        for value in splits:
+            node = ListNode(int(value))
+            if last:
+                last.next = node
+                last = last.next
+            else:
+                root = last = node
+        return root
+    else:
+        return ListNode(int(item))
 
 
-def test_add_two_numbers2():
-    l1 = cursor = ListNode(9)
-    for index in range(9):
-        cursor.next = ListNode(9)
-        cursor = cursor.next
-    l2 = ListNode(1)
-
-    cursor = SOLUTION.addTwoNumbers(l1, l2)
-    for index in range(10):
-        assert 0 == cursor.val
-        cursor = cursor.next
-    assert 1 == cursor.val
+@mark.parametrize('l1, l2, expect', read_csv(__file__, parser=_parser))
+def test_add_two_numbers(l1, l2, expect):
+    result = Solution().addTwoNumbers(l1, l2)
+    while expect or result:
+        assert expect.val == result.val
+        expect = expect.next
+        result = result.next
