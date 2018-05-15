@@ -1,25 +1,9 @@
 from pytest import mark
 
 from leetcode.longest_palindromic_substring import Solution
-
-# noinspection SpellCheckingInspection
-PARAMS = [
-    ('a', 'a'),
-    ('abb', 'bb'),
-    ('ccd', 'cc'),
-    ('cbbd', 'bb'),
-    ('aaaab', 'aaaa'),
-    ('abbbb', 'bbbb'),
-    ('babad', 'bab'),
-    ('aaaaab', 'aaaaa'),
-    ('abbbbb', 'bbbbb'),
-    ('ababababccd', 'abababa'),
-    ('abcdefgfedcba', 'abcdefgfedcba'),
-    ('abcdefg', 'a'),
-]
+from tests import read_csv
 
 
-@mark.parametrize('input_str, expect', PARAMS)
+@mark.parametrize('input_str, expect', read_csv(__file__, parser=str))
 def test_longest_palindrome(input_str, expect):
-    solution = Solution()
-    assert expect == solution.longestPalindrome(input_str)
+    assert expect == Solution().longestPalindrome(input_str)
