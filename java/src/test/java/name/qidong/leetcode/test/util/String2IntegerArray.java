@@ -6,7 +6,7 @@ import org.junit.jupiter.params.converter.ArgumentConverter;
 
 import java.util.Arrays;
 
-public class String2int implements ArgumentConverter {
+public class String2IntegerArray implements ArgumentConverter {
     @Override
     public Object convert(Object source, ParameterContext context)
             throws ArgumentConversionException {

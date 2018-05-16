@@ -1,7 +1,7 @@
 package name.qidong.leetcode.test;
 
 import name.qidong.leetcode.TwoSum;
-import name.qidong.leetcode.test.util.String2int;
+import name.qidong.leetcode.test.util.String2IntegerArray;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.converter.ConvertWith;
@@ -16,9 +16,9 @@ class TwoSumTest {
     @ParameterizedTest
     @CsvFileSource(resources = "/two_sum.csv", numLinesToSkip = 1)
     void twoSum(
-            @ConvertWith(String2int.class) int[] nums,
+            @ConvertWith(String2IntegerArray.class) int[] nums,
             int target,
-            @ConvertWith(String2int.class) int[] expect
+            @ConvertWith(String2IntegerArray.class) int[] expect
     ) {
         assertArrayEquals(expect, solution.twoSum(nums, target));
     }
