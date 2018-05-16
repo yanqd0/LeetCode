@@ -4,7 +4,7 @@ from os import makedirs
 from os.path import abspath, basename, dirname, isdir, join
 
 
-def generate_csv(path, fields, rows):
+def generate_csv(path, fields, rows, quote_empty=False):
     path = abspath(path)
     name = basename(path)
     name = re.sub('py$', 'csv', name)
@@ -18,5 +18,8 @@ def generate_csv(path, fields, rows):
         writer.writeheader()
 
     with open(csv_path, 'a') as fobj:
-        writer = csv.writer(fobj)
+        if quote_empty:
+            writer = csv.writer(fobj, quoting=csv.QUOTE_NONNUMERIC)
+        else:
+            writer = csv.writer(fobj)
         writer.writerows(rows)
