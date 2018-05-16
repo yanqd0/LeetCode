@@ -11,9 +11,6 @@ class ZigZagConversionTest {
     @CsvFileSource(resources = "/zigzag_conversion.csv", numLinesToSkip = 1)
     void convert(String s, int numRows, String expect) {
         ZigZagConversion solution = new ZigZagConversion();
-        if (s == null) s = "";
-        if (expect == null) expect = "";
-
         assertEquals(expect, solution.convert(s, numRows));
     }
 }
