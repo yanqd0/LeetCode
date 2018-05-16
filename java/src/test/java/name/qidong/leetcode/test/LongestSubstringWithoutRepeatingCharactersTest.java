@@ -1,35 +1,23 @@
 package name.qidong.leetcode.test;
 
 import name.qidong.leetcode.LongestSubstringWithoutRepeatingCharacters;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.CsvFileSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SuppressWarnings("SpellCheckingInspection")
 class LongestSubstringWithoutRepeatingCharactersTest {
-    private LongestSubstringWithoutRepeatingCharacters solution;
-
-    @BeforeEach
-    void setUp() {
-        solution = new LongestSubstringWithoutRepeatingCharacters();
-    }
-
-    @ParameterizedTest(name = "{index} => input={0}, expect={1}")
-    @CsvSource({
-            "abcabcbb, 3",
-            "bbbbb, 1",
-            "pwwkew, 3",
-            "c, 1",
-            "au, 2",
-            "aab, 2",
-            "abba, 2",
-            "ggububgvfk, 6",
-            "cdd, 2",
-            "'', 0"
-    })
+    @ParameterizedTest
+    @CsvFileSource(
+            resources = "/longest_substring_without_repeating_characters.csv",
+            numLinesToSkip = 1
+    )
     void lengthOfLongestSubstring(String input, int expect) {
+        LongestSubstringWithoutRepeatingCharacters solution =
+                new LongestSubstringWithoutRepeatingCharacters();
+        if (input == null) input = "";
+
         assertEquals(expect, solution.lengthOfLongestSubstring(input));
     }
 }

@@ -14,7 +14,7 @@ package name.qidong.leetcode;
  * the answer must be a <strong>substring</strong>, <code>"pwke"</code> is a subsequence and not a
  * substring.
  *
- * @see <a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/description/">
+ * @see <a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/">
  * Longest Substring Without Repeating Characters - LeetCode</a>
  */
 @SuppressWarnings("SpellCheckingInspection")
