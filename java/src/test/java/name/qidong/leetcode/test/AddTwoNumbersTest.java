@@ -1,7 +1,6 @@
 package name.qidong.leetcode.test;
 
 import name.qidong.leetcode.AddTwoNumbers;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ParameterContext;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.converter.ArgumentConversionException;
@@ -13,13 +12,6 @@ import static name.qidong.leetcode.AddTwoNumbers.ListNode;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class AddTwoNumbersTest {
-    private AddTwoNumbers solution;
-
-    @BeforeEach
-    void setUp() {
-        solution = new AddTwoNumbers();
-    }
-
     @ParameterizedTest
     @CsvFileSource(resources = "/add_two_numbers.csv", numLinesToSkip = 1)
     void addTwoNumbers(
@@ -27,7 +19,7 @@ class AddTwoNumbersTest {
             @ConvertWith(String2ListNode.class) ListNode l2,
             @ConvertWith(String2ListNode.class) ListNode expect
     ) {
-        solution = new AddTwoNumbers();
+        AddTwoNumbers solution = new AddTwoNumbers();
         ListNode result = solution.addTwoNumbers(l1, l2);
         while (expect != null || result != null) {
             assertEquals(expect.val, result.val);
