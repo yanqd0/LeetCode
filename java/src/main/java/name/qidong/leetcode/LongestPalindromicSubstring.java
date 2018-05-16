@@ -19,8 +19,8 @@ package name.qidong.leetcode;
  * Output: "bb"
  * </code></pre>
  *
- * @see <a href="https://leetcode.com/problems/longest-palindromic-substring/description/">Longest
- * Palindromic Substring - LeetCode</a>
+ * @see <a href="https://leetcode.com/problems/longest-palindromic-substring/">Longest Palindromic
+ * Substring - LeetCode</a>
  */
 @SuppressWarnings("SpellCheckingInspection")
 public class LongestPalindromicSubstring {

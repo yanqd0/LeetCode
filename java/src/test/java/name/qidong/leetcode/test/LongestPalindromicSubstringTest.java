@@ -1,38 +1,16 @@
 package name.qidong.leetcode.test;
 
 import name.qidong.leetcode.LongestPalindromicSubstring;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.CsvFileSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class LongestPalindromicSubstringTest {
-    private LongestPalindromicSubstring solution;
-
-    @BeforeEach
-    void setUp() {
-        solution = new LongestPalindromicSubstring();
-    }
-
-    @SuppressWarnings("SpellCheckingInspection")
-    @ParameterizedTest(name = "{index} => s={0}, expect={1}")
-    @CsvSource({
-            "'', ''",
-            "'a', 'a'",
-            "'abb', 'bb'",
-            "'ccd', 'cc'",
-            "'cbbd', 'bb'",
-            "'aaaab', 'aaaa'",
-            "'abbbb', 'bbbb'",
-            "'babad', 'bab'",
-            "'aaaaab', 'aaaaa'",
-            "'abbbbb', 'bbbbb'",
-            "'ababababccd', 'abababa'",
-            "'abcdefgfedcba', 'abcdefgfedcba'",
-            "'abcdefg', 'a'",
-    })
+    @ParameterizedTest
+    @CsvFileSource(resources = "/longest_palindromic_substring.csv", numLinesToSkip = 1)
     void longestPalindrome(String s, String expect) {
+        LongestPalindromicSubstring solution = new LongestPalindromicSubstring();
         assertEquals(expect, solution.longestPalindrome(s));
     }
 }
