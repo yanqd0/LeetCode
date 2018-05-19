@@ -2,6 +2,7 @@ package name.qidong.leetcode.test;
 
 import name.qidong.leetcode.TwoSum;
 import name.qidong.leetcode.test.util.String2int;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.converter.ConvertWith;
@@ -11,7 +12,12 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
 class TwoSumTest {
-    private TwoSum solution = new TwoSum();
+    private TwoSum solution;
+
+    @BeforeEach
+    private void setup() {
+        solution = new TwoSum();
+    }
 
     @ParameterizedTest
     @CsvFileSource(resources = "/two_sum.csv", numLinesToSkip = 1)
