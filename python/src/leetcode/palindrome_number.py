@@ -25,10 +25,8 @@ Follow up:
 Could you solve it without converting the integer to a string?
 """
 
-from math import log
 
-
-# noinspection PyPep8Naming
+# noinspection PyPep8Naming,PyMethodMayBeStatic
 class Solution:
     def isPalindrome(self, x):
         """
@@ -37,20 +35,10 @@ class Solution:
         """
         if x < 0:
             return False
-        elif x == 0:
-            return True
 
-        high = int(log(x, 10))
-        low = 0
-        while low < high:
-            if self.number_of(x, low) == self.number_of(x, high):
-                low += 1
-                high -= 1
-            else:
-                return False
-        else:
-            return True
+        nums = []
+        while x > 0:
+            nums.append(x % 10)
+            x //= 10
 
-    @staticmethod
-    def number_of(x, base):
-        return x % (10 ** (base + 1)) // (10 ** base)
+        return nums == nums[::-1]
