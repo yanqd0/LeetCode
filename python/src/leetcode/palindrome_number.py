@@ -25,22 +25,32 @@ Follow up:
 Could you solve it without converting the integer to a string?
 """
 
+from math import log
 
-# noinspection PyPep8Naming,PyMethodMayBeStatic
+
+# noinspection PyPep8Naming
 class Solution:
     def isPalindrome(self, x):
         """
         :type x: int
         :rtype: bool
         """
-        num_str = str(x)
-        left = 0
-        right = len(num_str) - 1
-        while left <= right:
-            if num_str[left] == num_str[right]:
-                left += 1
-                right -= 1
+        if x < 0:
+            return False
+        elif x == 0:
+            return True
+
+        high = int(log(x, 10))
+        low = 0
+        while low < high:
+            if self.number_of(x, low) == self.number_of(x, high):
+                low += 1
+                high -= 1
             else:
                 return False
         else:
             return True
+
+    @staticmethod
+    def number_of(x, base):
+        return x % (10 ** (base + 1)) // (10 ** base)
