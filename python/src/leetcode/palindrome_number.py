@@ -41,4 +41,12 @@ class Solution:
             nums.append(x % 10)
             x //= 10
 
-        return nums == nums[::-1]
+        left = 0
+        right = len(nums) - 1
+        while left < right:
+            if nums[left] == nums[right]:
+                left += 1
+                right -= 1
+            else:
+                return False
+        return True
