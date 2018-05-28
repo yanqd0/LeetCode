@@ -1,0 +1,17 @@
+s,p,expect
+aa,a,False
+aa,a*,True
+ab,.*,True
+aab,c*a*b,True
+mississippi,mis*is*p*.,False
+mississippi,mis*is*.p*.,True
+mississippi,.*,True
+,,True
+aaaabbbb,a*ab*,True
+aaaabbbb,a*.ab*,True
+aaaabbbb,a*aab*,True
+aaaabbbb,.a*ab*,True
+aaaabbbb,aaaaa*b*bbbb,True
+aaaabbbb,.aab*,False
+aaaabbbb,........,True
+aaaabbbb,.......,False
