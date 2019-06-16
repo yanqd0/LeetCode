@@ -45,8 +45,7 @@ class Solution:
                 if s[index - half] != s[index + half]:
                     half -= 1
                     if end - start < 2 * half or (
-                            end - start == 2 * half and
-                            index - half < start
+                        end - start == 2 * half and index - half < start
                     ):
                         start, end = index - half, index + half
                     break
@@ -65,12 +64,11 @@ class Solution:
                 if s[index - half] != s[index + 1 + half]:
                     half -= 1
                     if end - start < 2 * half + 1 or (
-                            end - start == 2 * half + 1 and
-                            index - half < start
+                        end - start == 2 * half + 1 and index - half < start
                     ):
                         start, end = index - half, index + 1 + half
                     break
             else:
                 start, end = index - padding, index + 1 + padding
 
-        return s[start: end + 1]
+        return s[start:end + 1]

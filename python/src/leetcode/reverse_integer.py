@@ -24,8 +24,8 @@ your function returns 0 when the reversed integer overflows.
 https://leetcode.com/problems/reverse-integer/
 """
 
-MAX_INT = 2 ** 31 - 1
-MIN_INT = -2 ** 31
+MAX_INT = 2**31 - 1
+MIN_INT = -2**31
 
 
 # noinspection PyPep8Naming,PyMethodMayBeStatic

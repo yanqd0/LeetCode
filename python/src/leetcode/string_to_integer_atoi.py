@@ -61,8 +61,8 @@ Explanation: The number "-91283472332" is out of the range of a 32-bit signed
 https://leetcode.com/problems/string-to-integer-atoi/
 """
 
-MAX_INT = 2 ** 31 - 1
-MIN_INT = -2 ** 31
+MAX_INT = 2**31 - 1
+MIN_INT = -2**31
 
 
 # noinspection PyPep8Naming,PyMethodMayBeStatic,PyShadowingBuiltins
