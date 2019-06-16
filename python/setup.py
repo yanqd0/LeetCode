@@ -1,57 +1,59 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-
-""" Setup script for csft """
+""" Setup script for leetcode.py """
 import runpy
 
 from setuptools import find_packages, setup
 
-
-INFO = runpy.run_path('src/leetcode/_meta.py')
+_INFO = runpy.run_path('src/leetcode/_meta.py')
+_SETUP_REQUIRES = [
+    'pytest-runner',
+    'setuptools-scm',
+]
+_TESTS_REQUIRE = [
+    'mock',
+    'pytest',
+    'pytest-cov',
+    'pytest-isort',
+    'pytest-mock',
+    'pytest-yapf',
+]
 
 setup(
-    name='leetcode',
+    # Metadata
+    name='leetcode.py',
     description='Python solutions of LeetCode',
-
-    url=INFO['__url__'],
-    author=INFO['__author__'],
-    author_email=INFO['__email__'],
-    license=INFO['__license__'],
+    url=_INFO['__url__'],
+    author=_INFO['__author__'],
+    author_email=_INFO['__email__'],
+    license=_INFO['__license__'],
     use_scm_version={
-        "root": "..",
-        "relative_to": __file__,
+        'root': '..',
+        'relative_to': __file__,
     },
-
+    # Package modules and data
     packages=find_packages('src'),
     package_dir={'': 'src'},
-    entry_points={
-        'console_scripts': (
-            'csft = csft.__main__:main',
-        ),
-    },
-
+    # Requires
     python_requires='>=3.6',
     install_requires=[],
-    setup_requires=[
-        'pytest-runner >= 3.0',
-        'setuptools_scm >= 2.0.0',
-    ],
-    tests_require=[
-        'pytest >= 3.4.0',
-        'pytest-cov >= 2.5.1',
-        'pytest-mock >= 1.10.0',
-    ],
-
+    setup_requires=_SETUP_REQUIRES,
+    tests_require=_TESTS_REQUIRE,
+    extras_require={
+        'dev': _SETUP_REQUIRES + _TESTS_REQUIRE,
+    },
+    # PyPI Metadata
     keywords=['leetcode'],
     platforms=['any'],
     classifiers=[
         # see: https://pypi.python.org/pypi?:action=list_classifiers
-        'Development Status :: 1 - Planning',
+        'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Operating System :: MacOS :: MacOS X',
         'Operating System :: Microsoft :: Windows',
         'Operating System :: POSIX',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
     ],
 )
