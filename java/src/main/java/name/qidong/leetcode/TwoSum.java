@@ -32,3 +32,8 @@ public class TwoSum {
         throw new IllegalArgumentException("No two sum solution!");
     }
 }
+
+/*
+Runtime: 2 ms, faster than 99.13% of Java online submissions for Two Sum.
+Memory Usage: 38.1 MB, less than 97.27% of Java online submissions for Two Sum.
+*/
