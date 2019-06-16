@@ -1,6 +1,7 @@
 from pytest import mark
 
 from leetcode.longest_palindromic_substring import Solution
+
 from . import read_csv
 
 

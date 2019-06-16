@@ -1,6 +1,7 @@
 from pytest import mark
 
 from leetcode.longest_substring_without_repeating_characters import Solution
+
 from . import read_csv
 
 

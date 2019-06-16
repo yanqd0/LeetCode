@@ -1,6 +1,7 @@
 from pytest import mark
 
 from leetcode.string_to_integer_atoi import Solution
+
 from . import read_csv
 
 

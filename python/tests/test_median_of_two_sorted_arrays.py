@@ -1,6 +1,7 @@
 from pytest import mark
 
 from leetcode.median_of_two_sorted_arrays import Solution
+
 from . import read_csv
 
 

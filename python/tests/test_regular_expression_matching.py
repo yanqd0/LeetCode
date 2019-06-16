@@ -1,6 +1,7 @@
 from pytest import mark
 
 from leetcode.regular_expression_matching import Solution
+
 from . import read_csv
 
 

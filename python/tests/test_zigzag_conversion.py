@@ -1,6 +1,7 @@
 from pytest import mark
 
 from leetcode.zigzag_conversion import Solution
+
 from . import read_csv
 
 

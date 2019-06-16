@@ -1,6 +1,7 @@
 from pytest import mark, raises
 
 from leetcode.two_sum import Solution
+
 from . import read_csv
 
 

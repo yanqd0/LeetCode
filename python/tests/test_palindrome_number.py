@@ -1,6 +1,7 @@
 from pytest import mark
 
 from leetcode.palindrome_number import Solution
+
 from . import read_csv
 
 
