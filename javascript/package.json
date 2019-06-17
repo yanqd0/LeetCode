@@ -28,7 +28,8 @@
     "vue-template-compiler": "^2.6.10"
   },
   "resolutions": {
-    "babel-core": "^7.0.0-0"
+    "babel-core": "^7.0.0-0",
+    "jest": "24.8.0"
   },
   "eslintConfig": {
     "root": true,
