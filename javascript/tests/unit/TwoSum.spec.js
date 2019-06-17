@@ -21,4 +21,8 @@ describe('TwoSum.js', () => {
   test.each(TESTS)('nums=%s, target=%s, expect=%s', (nums, target, expected) => {
     expect(expected).toEqual(twoSum(nums, target));
   });
+
+  test('Invalid input', () => {
+    expect(() => twoSum([1, 2], 4)).toThrow(Error);
+  });
 });

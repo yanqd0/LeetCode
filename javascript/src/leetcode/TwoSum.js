@@ -26,7 +26,7 @@ var twoSum = function (nums, target) {
       return [j, i];
     }
   }
-  return [0, 0];
+  throw new Error('No two sum solution!');
 };
 
 /*
