@@ -34,4 +34,4 @@ Runtime: 56 ms, faster than 93.56% of JavaScript online submissions for Two Sum.
 Memory Usage: 34.5 MB, less than 82.58% of JavaScript online submissions for Two Sum.
 */
 
-export { twoSum };
+export default twoSum;

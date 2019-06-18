@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import parse from 'csv-parse/lib/sync';
-import { twoSum } from '../../src/leetcode/TwoSum';
+import twoSum from '../../src/leetcode/twoSum';
 
 const CSV_NAME = 'two_sum.csv';
 const CSV_FILE = path.join(__dirname, 'cases', CSV_NAME);
