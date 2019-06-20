@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import parse from 'csv-parse/lib/sync';
 
-export function readCases (name) {
+export function readRawCases (name) {
   const csvFile = path.join(__dirname, 'cases', name);
   const content = fs.readFileSync(csvFile, { encoding: 'utf-8' });
   return parse(content, { columns: false, skip_empty_lines: true }).slice(1);
@@ -25,3 +25,10 @@ export function parseParameters (cases, parsers = null) {
   }
   return parsedCases;
 }
+
+export function readParsedCases (name, parsers = null) {
+  const cases = readRawCases(name);
+  return parseParameters(cases, parsers);
+}
+
+export const readCases = readParsedCases;

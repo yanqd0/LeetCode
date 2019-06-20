@@ -1,8 +1,7 @@
-import { readCases, parseParameters } from './utils';
+import { readCases } from './utils';
 import twoSum from '../../src/leetcode/twoSum';
 
-const RAW_CASES = readCases('two_sum.csv');
-const CASES = parseParameters(RAW_CASES);
+const CASES = readCases('two_sum.csv');
 
 describe('TwoSum.js', () => {
   test.each(CASES)('nums=%s, target=%s, expect=%s', (nums, target, expected) => {
