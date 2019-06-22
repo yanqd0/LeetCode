@@ -21,20 +21,20 @@ package name.qidong.leetcode;
 public class LongestSubstringWithoutRepeatingCharacters {
     public int lengthOfLongestSubstring(String s) {
         int max = 0;
-        int last = -1;
+        int last = 0;
         int[] char2index = new int[128];
         for (int i = 0; i < s.length(); ++i) {
-            int previous = char2index[s.charAt(i)];
-            if (previous > 0) {
-                max = Math.max(max, i - last - 1);
-                for (int j = last + 1; j < previous; ++j) {
-                    char2index[s.charAt(j)] = -1;
+            int next = char2index[s.charAt(i)];
+            if (next > 0) {
+                max = Math.max(max, i - last);
+                for (int j = last; j < next; ++j) {
+                    char2index[s.charAt(j)] = 0;
                 }
-                last = previous - 1;
+                last = next;
             }
             char2index[s.charAt(i)] = i + 1;
         }
-        return Math.max(max, s.length() - last - 1);
+        return Math.max(max, s.length() - last);
     }
 }
 
