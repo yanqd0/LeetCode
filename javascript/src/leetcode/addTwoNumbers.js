@@ -43,7 +43,7 @@ Runtime: 104 ms, faster than 96.55% of JavaScript online submissions for Add Two
 Memory Usage: 39 MB, less than 20.57% of JavaScript online submissions for Add Two Numbers.
 */
 
-class ListNode {
+export class ListNode {
   constructor (val) {
     this.val = val;
     this.next = null;

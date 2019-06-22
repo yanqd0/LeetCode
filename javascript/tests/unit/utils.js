@@ -8,9 +8,9 @@ export function readRawCases (name) {
   return parse(content, { columns: false, skip_empty_lines: true }).slice(1);
 }
 
-export function parseParameters (cases, parsers = null) {
+export function parseParameters (cases, parsers = undefined) {
   const parsedCases = [];
-  if (!parsers) {
+  if (parsers === undefined) {
     // Use `eval` as the default parameter parser.
     // eslint-disable-next-line no-eval
     parsers = cases[0].map(x => eval);
@@ -26,7 +26,7 @@ export function parseParameters (cases, parsers = null) {
   return parsedCases;
 }
 
-export function readParsedCases (name, parsers = null) {
+export function readParsedCases (name, parsers = undefined) {
   const cases = readRawCases(name);
   return parseParameters(cases, parsers);
 }
