@@ -6,19 +6,13 @@ from . import read_csv
 
 
 def _parser(item):
-    sep = '->'
-    if sep in item:
-        root = last = None
-        for value in item.split(sep):
-            node = ListNode(int(value))
-            if last:
-                last.next = node
-                last = last.next
-            else:
-                root = last = node
-        return root
-    else:
-        return ListNode(int(item))
+    nodes = eval(item)
+    head = ListNode(0)
+    cursor = head
+    for value in nodes:
+        cursor.next = ListNode(value)
+        cursor = cursor.next
+    return head.next
 
 
 @mark.parametrize('l1, l2, expect', read_csv(__file__, parser=_parser))

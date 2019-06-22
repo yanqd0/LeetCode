@@ -34,22 +34,18 @@ class String2ListNode implements ArgumentConverter {
     public Object convert(Object source, ParameterContext context)
             throws ArgumentConversionException {
         try {
-            String str = (String) source;
-            final String sep = "->";
-            if (str.contains(sep)) {
-                ListNode root = null, last = null;
-                for (String value : str.split(sep)) {
-                    ListNode node = new ListNode(Integer.parseInt(value.trim()));
-                    if (last == null) {
-                        root = last = node;
-                    } else {
-                        last = last.next = node;
-                    }
-                }
-                return root;
-            } else {
-                return new ListNode(Integer.parseInt(str.trim()));
+            String row = (String) source;
+            String strList = row.replace("[", "")
+                .replace("]", "")
+                .trim();
+            String[] list = strList.split(",");
+            final ListNode head = new ListNode(0);
+            ListNode cursor = head;
+            for (String value : list) {
+                cursor.next = new ListNode(Integer.parseInt(value.trim()));
+                cursor = cursor.next;
             }
+            return head.next;
         } catch (ClassCastException e) {
             throw new ArgumentConversionException("The source is not a String", e);
         } catch (NumberFormatException e) {
