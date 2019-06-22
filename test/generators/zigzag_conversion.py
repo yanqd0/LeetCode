@@ -19,6 +19,6 @@ rows = [
 ]
 
 if __name__ == '__main__':
-    from __utils import generate_csv
+    from utils import generate_csv
 
     generate_csv(__file__, fields, rows, quote_empty=True)
