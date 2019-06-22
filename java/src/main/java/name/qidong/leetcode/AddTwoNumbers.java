@@ -52,3 +52,8 @@ public class AddTwoNumbers {
         }
     }
 }
+
+/*
+Runtime: 2 ms, faster than 90.66% of Java online submissions for Add Two Numbers.
+Memory Usage: 43.8 MB, less than 89.30% of Java online submissions for Add Two Numbers.
+*/

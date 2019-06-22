@@ -28,12 +28,12 @@ class Solution:
         raise RuntimeError('No two sum solution!')
 
 
-# Python 2:
+# Python 2
 # Runtime: 32 ms, faster than 89.77% of Python online submissions for Two Sum.
 # Memory Usage: 13.3 MB, less than 17.41% of Python online submissions
 # for Two Sum.
 #
-# Python 3:
+# Python 3
 # Runtime: 36 ms, faster than 93.97% of Python3 online submissions for Two Sum.
 # Memory Usage: 14.5 MB, less than 26.27% of Python3 online submissions
 # for Two Sum.

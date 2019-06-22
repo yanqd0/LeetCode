@@ -14,14 +14,16 @@ Explanation: 342 + 465 = 807.
 """
 
 
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+
 # noinspection PyPep8Naming,PyMethodMayBeStatic
 class Solution:
-    def addTwoNumbers(self, l1, l2):
-        """
-        :type l1: ListNode
-        :type l2: ListNode
-        :rtype: ListNode
-        """
+    def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
         result = cursor = l1
         carry = 0
         while cursor is not None:
@@ -38,8 +40,14 @@ class Solution:
         return result
 
 
-# Definition for singly-linked list.
-class ListNode:
-    def __init__(self, x):
-        self.val = x
-        self.next = None
+# Python 2
+# Runtime: 72 ms, faster than 24.67% of Python online submissions
+# for Add Two Numbers.
+# Memory Usage: 11.8 MB, less than 74.88% of Python online submissions
+# for Add Two Numbers.
+#
+# Python 3
+# Runtime: 68 ms, faster than 98.03% of Python3 online submissions
+# for Add Two Numbers.
+# Memory Usage: 13.3 MB, less than 38.81% of Python3 online submissions
+# for Add Two Numbers.
