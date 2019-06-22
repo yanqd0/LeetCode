@@ -33,39 +33,46 @@ public class MedianOfTwoSortedArrays {
 
         int start = 0, end = nums1.length;
         int half = (nums1.length + nums2.length + 1) / 2;
-        while (start <= end) {
-            int index1 = (start + end) / 2;
-            int index2 = half - index1;
+        int index1, index2;
+        do {
+            index1 = (start + end) / 2;
+            index2 = half - index1;
 
             if (index1 > 0 && nums1[index1 - 1] > nums2[index2]) {
                 end = index1 - 1;
             } else if (index1 < nums1.length && nums1[index1] < nums2[index2 - 1]) {
                 start = index1 + 1;
             } else {
-                int left;
-                if (index1 <= 0) {
-                    left = nums2[index2 - 1];
-                } else if (index2 <= 0) {
-                    left = nums1[index1 - 1];
-                } else {
-                    left = Math.max(nums1[index1 - 1], nums2[index2 - 1]);
-                }
-
-                if ((nums1.length + nums2.length) % 2 == 1) {
-                    return left;
-                }
-
-                int right;
-                if (index1 >= nums1.length) {
-                    right = nums2[index2];
-                } else if (index2 >= nums2.length) {
-                    right = nums1[index1];
-                } else {
-                    right = Math.min(nums1[index1], nums2[index2]);
-                }
-                return (left + right) / 2.0;
+                break;
             }
+        } while (start <= end);
+
+        int left;
+        if (index1 <= 0) {
+            left = nums2[index2 - 1];
+        } else if (index2 <= 0) {
+            left = nums1[index1 - 1];
+        } else {
+            left = Math.max(nums1[index1 - 1], nums2[index2 - 1]);
         }
-        throw new RuntimeException("No answer!");
+
+        if ((nums1.length + nums2.length) % 2 == 1) {
+            return left;
+        }
+
+        int right;
+        if (index1 >= nums1.length) {
+            right = nums2[index2];
+        } else if (index2 >= nums2.length) {
+            right = nums1[index1];
+        } else {
+            right = Math.min(nums1[index1], nums2[index2]);
+        }
+        return (left + right) / 2.0;
     }
 }
+
+/*
+Runtime: 2 ms, faster than 100.00% of Java online submissions for Median of Two Sorted Arrays.
+Memory Usage: 47.2 MB, less than 88.22% of Java online submissions for Median of Two Sorted Arrays.
+*/
