@@ -37,3 +37,10 @@ public class LongestSubstringWithoutRepeatingCharacters {
         return Math.max(max, s.length() - last - 1);
     }
 }
+
+/*
+Runtime: 2 ms, faster than 99.87% of Java online submissions
+for Longest Substring Without Repeating Characters.
+Memory Usage: 36.6 MB, less than 99.83% of Java online submissions
+for Longest Substring Without Repeating Characters.
+*/

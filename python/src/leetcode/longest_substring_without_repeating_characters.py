@@ -19,15 +19,10 @@ https://leetcode.com/problems/longest-substring-without-repeating-characters/
 
 # noinspection PyPep8Naming,PyMethodMayBeStatic
 class Solution:
-    def lengthOfLongestSubstring(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+    def lengthOfLongestSubstring(self, s: str) -> int:
         longest = 0
         last = -1
         char2index = [-1] * 128
-        print(s)
         for index, ch in enumerate(s):
             previous = char2index[ord(ch)]
             if previous >= 0:
@@ -37,3 +32,16 @@ class Solution:
                 last = previous
             char2index[ord(ch)] = index
         return max(longest, len(s) - last - 1)
+
+
+# Python 2
+# Runtime: 40 ms, faster than 91.84% of Python online submissions
+# for Longest Substring Without Repeating Characters.
+# Memory Usage: 12.2 MB, less than 43.75% of Python online submissions
+# for Longest Substring Without Repeating Characters.
+#
+# Python 3
+# Runtime: 76 ms, faster than 62.44% of Python3 online submissions
+# for Longest Substring Without Repeating Characters.
+# Memory Usage: 13.2 MB, less than 81.34% of Python3 online submissions
+# for Longest Substring Without Repeating Characters.
