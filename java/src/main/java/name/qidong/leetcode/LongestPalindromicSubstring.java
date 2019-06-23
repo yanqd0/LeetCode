@@ -26,65 +26,45 @@ package name.qidong.leetcode;
 public class LongestPalindromicSubstring {
     public String longestPalindrome(String s) {
         final int len = s.length();
-        if (len <= 1) {
+        if (len < 2) {
             return s;
         }
+
         int start = 0, end = 0;
-
-        int index = len / 2;
-        for (int step = 0; step < len; ++step) {
-            index += step % 2 == 1 ? step : -step;
-            int padding = Math.min(index, len - 1 - index);
-            if (end - start > 2 * padding) {
-                break;
-            }
-
-            boolean palindrom = true;
-            for (int half = 0; half <= padding; ++half) {
-                if (s.charAt(index + half) != s.charAt(index - half)) {
-                    --half;
-                    if (2 * half > end - start
-                            || 2 * half == end - start && index - half < start) {
-                        start = index - half;
-                        end = index + half;
-                    }
-                    palindrom = false;
+        for (int fix = 0; fix < 2; ++fix) {
+            int center = (len - 1) / 2;
+            for (int step = 0; step < len; ++step) {
+                center += (step + fix) % 2 == 1 ? step : -step;
+                int padding = Math.min(center, len - 1 - center - fix);
+                if (2 * padding + fix < end - start) {
                     break;
                 }
-            }
-            if (palindrom) {
-                start = index - padding;
-                end = index + padding;
-            }
-        }
 
-        index = len / 2;
-        for (int step = 0; step <= len; ++step) {
-            index += step % 2 == 1 ? step : -step;
-            int padding = Math.min(index - 1, len - 1 - index);
-            if (end - start > 2 * padding + 1) {
-                break;
-            }
-
-            boolean palindrom = true;
-            for (int half = 0; half <= padding; ++half) {
-                if (s.charAt(index - 1 - half) != s.charAt(index + half)) {
-                    --half;
-                    if (2 * half + 1 > end - start
-                            || 2 * half + 1 == end - start && index - 1 - half < start) {
-                        start = index - 1 - half;
-                        end = index + half;
+                boolean palindrom = true;
+                for (int half = 0; half <= padding; ++half) {
+                    if (s.charAt(center - half) != s.charAt(center + fix + half)) {
+                        --half;
+                        if (2 * half + fix > end - start 
+                                || 2 * half + fix == end - start && center - 1 - half < start) {
+                            start = center - half;
+                            end = center + fix + half;
+                        }
+                        palindrom = false;
+                        break;
                     }
-                    palindrom = false;
-                    break;
+                }
+
+                if (palindrom) {
+                    start = center - padding;
+                    end = center + fix + padding;
                 }
             }
-            if (palindrom) {
-                start = index - 1 - padding;
-                end = index + padding;
-            }
         }
-
         return s.substring(start, end + 1);
     }
 }
+
+/*
+Runtime: 6 ms, faster than 88.02% of Java online submissions for Longest Palindromic Substring.
+Memory Usage: 36 MB, less than 99.98% of Java online submissions for Longest Palindromic Substring.
+*/
