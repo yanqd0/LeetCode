@@ -38,6 +38,9 @@
 1. No.27 [Remove Element](https://leetcode.com/problems/remove-element) | [移除元素](https://leetcode-cn.com/problems/remove-element)
     - Code: [remove_element.py](./src/leetcode/remove_element.py)
     - Test: [test_remove_element.py](./tests/test_remove_element.py)
+1. No.31 [Next Permutation](https://leetcode.com/problems/next-permutation/) | [下一个排列](https://leetcode-cn.com/problems/next-permutation/)
+    - Code: [next_permutation.py](./src/leetcode/next_permutation.py)
+    - Test: [test_next_permutation.py](./tests/test_next_permutation.py)
 
 
 ## Setup
