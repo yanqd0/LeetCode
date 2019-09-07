@@ -57,6 +57,7 @@ class Solution:
             nums.remove(val)
         return len(nums)
 
+
 # Python 3
 # Runtime: 36 ms, faster than 90.56% of Python3 online submissions
 # for Remove Element.

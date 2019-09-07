@@ -11,12 +11,10 @@ _SETUP_REQUIRES = [
     'setuptools-scm',
 ]
 _TESTS_REQUIRE = [
-    'mock',
     'pytest',
     'pytest-cov',
     'pytest-isort',
-    'pytest-mock',
-    'pytest-yapf',
+    'pytest-yapf3',
 ]
 
 setup(
