@@ -1,5 +1,7 @@
 # leetcode.py
 
+[![Code style: yapf](https://img.shields.io/badge/code%20style-yapf-blue)](https://github.com/google/yapf)
+
 ## Problems
 
 1. No.1 [Two Sum](https://leetcode.com/problems/two-sum) | [两数之和 ](https://leetcode-cn.com/problems/two-sum)
