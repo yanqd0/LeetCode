@@ -4,20 +4,28 @@
 
 This project holds my solutions in [leetcode.com].
 
-There are different languages.
-
-- [Python](python)
-- [Java](java)
+- US: <https://leetcode.com/yanqd0/>
+- CN: <https://leetcode-cn.com/u/yanqd0/>
 
 [leetcode.com]:https://leetcode.com/
 
-## Start a new game
+## Philosophy
 
-```sh
-git clone https://github.com/yanqd0/LeetCode.git -b init
-```
+I play LeetCode to learn not only algorithms, but also languages.
 
-In the [init] branch, there is a simple demo of projects.
-There may be some references and you can start your new game in [leetcode.com] easier.
+There are several sub projects, which sharing the same [test cases](./test).
 
-[init]:https://github.com/yanqd0/LeetCode/tree/init
+Sub projects:
+
+- [Python](./python)
+- [Java](./java)
+- [JavaScript](./javascript)
+
+With shared test cases, it is easy to write different language solution for the same problem.
+
+## Something Good
+
+There are 2 things are valuable in this toy project.
+
+- The project structure with a build framework.
+- The test code which using a csv based cases.
