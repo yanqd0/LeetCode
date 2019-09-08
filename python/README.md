@@ -43,6 +43,9 @@
 1. No.31 [Next Permutation](https://leetcode.com/problems/next-permutation/) | [下一个排列](https://leetcode-cn.com/problems/next-permutation/)
     - Code: [next_permutation.py](./src/leetcode/next_permutation.py)
     - Test: [test_next_permutation.py](./tests/test_next_permutation.py)
+1. No.48 [Rotate Image](https://leetcode.com/problems/rotate-image/) | [旋转图像](https://leetcode-cn.com/problems/rotate-image/)
+    - Code: [rotate_image.py](./src/leetcode/rotate_image.py)
+    - Test: [test_rotate_image.py](./tests/test_rotate_image.py)
 
 
 ## Setup
