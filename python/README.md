@@ -46,6 +46,9 @@
 1. No.48 [Rotate Image](https://leetcode.com/problems/rotate-image/) | [旋转图像](https://leetcode-cn.com/problems/rotate-image/)
     - Code: [rotate_image.py](./src/leetcode/rotate_image.py)
     - Test: [test_rotate_image.py](./tests/test_rotate_image.py)
+1. No.56 [Merge Intervals](https://leetcode.com/problems/merge-intervals/) | [合并区间](https://leetcode-cn.com/problems/merge-intervals/)
+    - Code: [merge_intervals.py](./src/leetcode/merge_intervals.py)
+    - Test: [merge_intervals.py](./tests/merge_intervals.py)
 
 
 ## Setup
