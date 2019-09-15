@@ -29,6 +29,9 @@
 1. No.9 [Palindrome Number](https://leetcode.com/problems/palindrome-number) | [回文数](https://leetcode-cn.com/problems/palindrome-number)
     - Code: [PalindromeNumber.java](./src/main/java/name/qidong/leetcode/PalindromeNumber.java)
     - Test: [PalindromeNumberTest.java](./src/test/java/name/qidong/leetcode/test/PalindromeNumberTest.java)
+1. No.27 [Remove Element](https://leetcode.com/problems/remove-element/) | [移除元素](https://leetcode-cn.com/problems/remove-element/)
+    - Code: [RemoveElement.java](./src/main/java/name/qidong/leetcode/RemoveElement.java)
+    - Test: [RemoveElementTest.java](./src/test/java/name/qidong/leetcode/test/RemoveElementTest.java)
 
 ## Setup
 
