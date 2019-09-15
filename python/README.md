@@ -49,6 +49,9 @@
 1. No.56 [Merge Intervals](https://leetcode.com/problems/merge-intervals/) | [合并区间](https://leetcode-cn.com/problems/merge-intervals/)
     - Code: [merge_intervals.py](./src/leetcode/merge_intervals.py)
     - Test: [merge_intervals.py](./tests/merge_intervals.py)
+1. No.151 [Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/) | [翻转字符串里的单词](https://leetcode-cn.com/problems/reverse-words-in-a-string/)
+    - Code: [reverse_words_in_a_string.py](./src/leetcode/reverse_words_in_a_string.py)
+    - Test: [reverse_words_in_a_string.py](./tests/reverse_words_in_a_string.py)
 
 
 ## Setup
