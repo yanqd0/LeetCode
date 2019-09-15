@@ -39,3 +39,10 @@ For C programmers, try to solve it in-place in O(1) extra space.
 class Solution:
     def reverseWords(self, s: str) -> str:
         return ' '.join(reversed(s.split()))
+
+
+# Python 3
+# Runtime: 40 ms, faster than 50.73% of Python3 online submissions
+# for Reverse Words in a String.
+# Memory Usage: 14.5 MB, less than 8.70% of Python3 online submissions
+# for Reverse Words in a String.
