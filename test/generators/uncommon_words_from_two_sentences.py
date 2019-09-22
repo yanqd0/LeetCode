@@ -4,11 +4,13 @@
 FIELDS = ['nums', 'target', 'expect']
 ROWS = [
     ('', '', set()),
+    (' ', '  ', set()),
     ('apple', '', {'apple'}),
-    ('this apple is sweet', 'this apple is sour', {'sweet', 'sour'}),
     ('apple apple', 'banana', {'banana'}),
     ('apple apple', 'banana banana', set()),
     ('apple', 'banana', {'apple', 'banana'}),
+    ('this apple is sweet', 'this apple is sour', {'sweet', 'sour'}),
+    ('  this apple is sweet', 'this apple is sour  ', {'sweet', 'sour'}),
 ]
 
 if __name__ == '__main__':
