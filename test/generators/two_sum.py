@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
-fields = ['nums', 'target', 'expect']
-rows = [
+FIELDS = ['nums', 'target', 'expect']
+ROWS = [
     ([1, 1], 2, [0, 1]),
     ([3, 2, 4], 6, [1, 2]),
     ([3, 2, 3], 6, [0, 2]),
@@ -11,4 +11,4 @@ rows = [
 if __name__ == '__main__':
     from utils import generate_csv
 
-    generate_csv(__file__, fields, rows)
+    generate_csv(__file__, FIELDS, ROWS)
