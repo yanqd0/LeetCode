@@ -15,6 +15,7 @@ _TESTS_REQUIRE = [
     'pytest-cov',
     'pytest-isort',
     'pytest-yapf3',
+    'pytest-timeout',
 ]
 
 setup(

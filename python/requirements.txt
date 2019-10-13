@@ -2,5 +2,6 @@ pytest >= 3.4.0
 pytest-cov >= 2.5.1
 pytest-isort
 pytest-runner >= 3.0
+pytest-timeout
 pytest-yapf3
 setuptools
